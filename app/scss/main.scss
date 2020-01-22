@@ -22,14 +22,36 @@ input, textarea{
 }
 
 body{
-	font-size: 16px;
+	font-size: 30px;
 	min-width: 320px;
 	position: relative;
-	line-height: 1.65;
-	font-family: 'Roboto', sans-serif;
+	line-height: auto;
+	font-family: 'Open Sans', sans-serif;
 	overflow-x: hidden;
 	color: $text;
 }
 
-// Custom Sass / Remove before use
+//Header
+.container{
+	width: 1920px;
+	background-color: #030303;
+}
+.content{
+	width: 1520px;
+	margin: 0 auto;
+}
+.nav{
+	display: flex;
+	justify-content: space-between;
+}
+.nav__list{
+	display: flex;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav__item{
+	margin-left: 40px;
+}
 
