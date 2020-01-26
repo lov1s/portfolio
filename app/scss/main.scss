@@ -40,32 +40,54 @@ body{
 }
 
 //Header
-.container{
+.header{
+	position: fixed;
 	width: 100%;
-	background-color: #111111;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
-.content{
+.header::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0e0e0e;
+	z-index: 2;
+}
+.container{
 	max-width: 1500px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
-.header__top{
-	padding: 50px 0 0 0;
+.header__content{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 100px;
+	align-items: center;
+}
+.header__logo{
+	position: relative;
+	z-index: 3;
 }
 .nav{
 	display: flex;
 	justify-content: space-between;
 }
 
-.nav__list{
+.menu__list{
+	position: relative;
 	display: flex;
 	justify-content: flex-end;
 	padding: 0;
 	list-style: none;
+	z-index: 3;
 }
-.nav__link{
+.menu__link{
 	display: inline-block;
-	margin-left: 40px;
-	padding: 0 0 10px 0;
 	text-align: center;	
 	color: $title;
 	font-size: 23px;
@@ -75,15 +97,24 @@ body{
 		border-bottom: 3px solid $accent;
 	}
 }
+.menu__list li{
+	margin: 0 0 0 25px;
+}
+.header__burger{
+	display: none;
+}
 @media (max-width: 768px){
-	.nav__burger{
+	body.lock{
+		overflow: hidden;
+	}
+	.header__burger{
 		display: block;
 		position: relative;
 		width: 30px;
 		height: 20px;
-		
+		z-index: 3;
 	}
-	.nav__burger span{
+	.header__burger span{
 		position: absolute;
 		background-color: #fff;
 		left: 0;
@@ -91,8 +122,8 @@ body{
 		height: 2px;
 		top: 9px;
 	}
-	.nav__burger::before,
-	.nav__burger::after{
+	.header__burger::before,
+	.header__burger::after{
 		content: '';
 		background-color: #fff;
 		position: absolute;
@@ -100,19 +131,42 @@ body{
 		height: 2px;
 		left: 0;
 	}
-	.nav__burger::before{
+	.header__burger::before{
 		top: 0;
 	}
-	.nav__burger::after{
+	.header__burger::after{
 		bottom: 0;
 	}
-	.nav{
+	.header__burger.active span{
+		transform: scale(0);
+	}
+	.header__burger.active::before{
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active::after{
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	.header__menu{
 		position: fixed;
-		top: 0;
+		top: -100%;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 50%;
+		padding: 120px 10px 20px 20px;
 		background-color: #767676;
+		overflow: auto;
+		transition: all 0.5s ease 0s;
+	}
+	.header__menu.active{
+		top: 0;
+	}
+	.menu__list{
+		display: block;
+	}
+	.menu__list li{
+		margin: 0 0 25px 0;
 	}
 }
 .main__title{
