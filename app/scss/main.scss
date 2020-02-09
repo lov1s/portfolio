@@ -258,7 +258,7 @@ body{
 .expertise__item{
 	max-width: 700px;
 	margin: 130px 0 0 0;
-	padding: 0 0 0 50px;
+	padding: 0 50px 0 0;
 }
 .expertise__subnum{
 	font-size: 36px;
@@ -271,14 +271,106 @@ body{
 .expertise__text{
 	margin: 0 0 0 50px;
 }
+
+//SKILLS
+
 .skills__wrapp{
 	margin: 165px 0 0 0;
 }
 .skills__list{
 	display: flex;
 	flex-flow: row wrap;
+	margin: 120px 0 0 0;
+	padding: 0 0 120px 0;
 }
-.skills__list li{
+.skills__item{
+	position: relative;
+	display: flex;
 	width: 670px;
-	padding: 0 0 0 50px;
+	margin: 0 40px 0 0;
+}
+.skills__item::before{
+	content: "";
+	position: absolute;
+	top: 20px;
+	left: 220px;
+	width: 440px;
+	height: 10px;
+	background-color: $title;
+	border-radius: 21px;
+}
+.skills__item::after{
+	content: "";
+	position: absolute;
+	top: 20px;
+	left: 220px;
+	width: 440px;
+	height: 10px;
+	background-color: $accent;
+	border-radius: 21px;
+	animation-duration: .7s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+.skills__item.html::after{
+	animation-name:  html;
+}
+@keyframes html {
+	to {
+		width: 400px;
+	}
+}
+.skills__item.css::after{
+	animation-name:  css;
+}
+@keyframes css {
+	to {
+		width: 370px;
+	}
+}
+.skills__item.js::after{
+	animation-name:  js;
+}
+@keyframes js {
+	to {
+		width: 330px;
+	}
+}
+.skills__item.ps::after{
+	animation-name:  ps;
+}
+@keyframes ps {
+	to {
+		width: 380px;
+	}
+}
+.skills__item.jq::after{
+	animation-name:  jq;
+}
+@keyframes jq {
+	to {
+		width: 350px;
+	}
+}
+.skills__item.bt::after{
+	animation-name:  bt;
+}
+@keyframes bt {
+	to {
+		width: 350px;
+	}
+}
+
+//PORTFOLIO
+
+.portfolio__wrapp{
+	margin: 170px 0 0 0;
+}
+.portfolio__num{
+	display: block;
+	text-align: center;
+}
+.portfolio__work{
+	display: block;
+	padding: 0 0 90% 0;
 }
