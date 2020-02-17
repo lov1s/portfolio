@@ -165,11 +165,48 @@
 						</li>
 					</ul>
 				</div>
+			</section>
+			<section class="comment">
+				<div class="comment__wrapper">
+					<div class="container">
+						<h2 class="comment__title">Leave a comment</h2>
+						<form action="/action_page.php">
+							<fieldset class="comment__form">
+								<label class="comment__fname" for="fname">First name:</label>
+								<input type="text" id="fname" name="fname">
+								<label class="comment__lname" for="lname">Last name:</label>
+								<input type="text" id="lname" name="lname">
+								<label class="comment_email" for="email">Enter your email:</label>
+								<input type="email" id="email" name="email">
+								<label class="comment__label" for="message">Comment</label>
+								<textarea class="comment__area" id="message" autocomplete="off" name="message" placeholder="Your massage"></textarea>
+								<input class="comment__send btn" type="submit" value="Send">
+							</fieldset>
+						</form>
+					</div>
+				</div>
 
 			</section>
 		</div>
 	</main>
-
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__wrapp">
+				<h3 class="footer__title">Follow me</h3>
+				<ul class="footer__list">
+					<li class="footer__item"><a class="social__link" href="#">
+						<img class="img-svg" src="img/_src/linkedin.svg" alt="LinkedIn"> <span>LinkedIn</span>
+					</a></li>
+					<li class="footer__item"><a class="social__link" href="#">
+						<img class="img-svg" src="img/_src/facebook.svg" alt="Facebook"> <span>Facebook</span>
+					</a></li>
+					<li class="footer__item"><a class="social__link" href="#">
+						<img class="img-svg" src="img/_src/twitter.svg" alt="Twitter"> <span>Tweater</span>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 
 
 
